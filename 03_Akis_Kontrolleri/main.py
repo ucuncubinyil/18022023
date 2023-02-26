@@ -217,23 +217,123 @@ not aralığı 0 ile 100 arasında olmalıdır.
     Ekrana "Nesrin Yılmaz Maaşınız: 4000₺" yazılacak.
 """
 
-isim: str = input("Adınız: ")
-yas: int = int(input("Yaşınız: "))
-maas: float = float(input("Maaşınız: "))
-cocuk_sayisi: int = int(input("Çocuk sayınız: "))
+# isim: str = input("Adınız: ")
+# yas: int = int(input("Yaşınız: "))
+# maas: float = float(input("Maaşınız: "))
+# cocuk_sayisi: int = int(input("Çocuk sayınız: "))
+#
+# if yas < 45 and yas > 18:
+#
+#     if cocuk_sayisi < 3 and cocuk_sayisi >= 0:
+#         maas += cocuk_sayisi * 250
+#     else:
+#         maas += cocuk_sayisi * 200
+# elif yas >= 45:
+#     maas += 500
+#
+# else:
+#     print("Belirtilen yaş aralığında değilsiniz.")
+#
+# print(f"{isim} Maaşınız: {maas}")
+# # print("{} Maaşınız: {}".format(isim,maas))
 
-if yas < 45 and yas > 18:
 
-    if cocuk_sayisi < 3 and cocuk_sayisi >= 0:
-        maas += cocuk_sayisi * 250
+"""
+ÖDEV:  Kullanıcıdan vize final not girilmesi istensin
+not aralığı 0 ile 100 arasında olmalıdır.
+# vize ve finalin ortalaması alınsın.
+# 0-44 : Kaldınız
+# 45-69: Geçtiniz
+# 70-84: İyi
+# 85-100: Pekiyi
+"""
+"""
+vize_not: float = float(input("Lütfen vize notunuzu 0-100 aralığında giriniz: "))
+final_not: float = float(input("Lütfen final notunuzu 0-100 aralığında giriniz: "))
+
+if (0 <= vize_not <= 100) and (0 <= final_not <= 100):
+    # Ortalama  vize %40 + final %60
+
+    ortalama: float = (vize_not * 0.4) + (final_not * 0.6)
+    print(ortalama)
+
+    if 0 <= ortalama < 45:
+        # print("Ortalamanız: {} ! Dersten kaldınız !!!".format(ortalama))
+        print(f"Ortalamanız: {ortalama} ! Dersten kaldınız !!!")
+    elif 45 <= ortalama < 70:
+        print(f"Ortalamanız: {ortalama} ! Dersten geçtiniz !!!")
+    elif 70 <= ortalama < 85:
+        print(f"Ortalamanız: {ortalama} ! Dersten geçtiniz(İyi) !!!")
     else:
-        maas += cocuk_sayisi * 200
-elif yas >= 45:
-    maas += 500
+        print(f"Ortalamanız: {ortalama} ! Dersten geçtiniz(Pekiyi) !!!")
 
 else:
-    print("Belirtilen yaş aralığında değilsiniz.")
+    print("Vize ve Final notlarınız 0-100 aralığında olmalıdır")
+"""
+
+# Kullanıcı Gİriş Paneli Tasarlayınız.
+
+"""
+    Kullanıcıadı/Email ve şifre ile giriş sağlanacak
+        Giriş Başarılı ise ekrana "Giriş Başarılı" yazsın
+        Değilse
+            Kullanıcıya kayıt olmak ister misiniz?
+                Hayır ise PEKİ!!!
+                Evet Kullanıcıadı, ad, soyad,email,şifre ve şifre tekrarı alarak kayıt yapalım.
+                    şifre ve şifretekrarın aynı olması
+"""
+
+# kullanici_adi = "mehmetnuri"
+# email = "info@mehmetnuri.net"
+# sifre = "1234"
+#
+# print("----------------------------GİRİŞ PANELİ----------------------------")
+#
+# user_name_or_email: str = input("Lütfen kullanıcı adınızı veya email adresinizi giriniz: ")
+# password: str = input("Lütfen şirenizi giriniz: ")
+#
+# if (kullanici_adi == user_name_or_email or email == user_name_or_email) and (sifre == password):
+#     print("Giriş başarılı")
+# else:
+#     cevap: str = input("Kayıt olmak istermisiniz(E/H):").upper() # -> e -> E, a-> A
+#
+#     if cevap == "E":
+#         ad = input("Adınız:")
+#         soyad = input("Soyadınız: ")
+#         username = input("Kullanıcı Adınız: ")
+#         email_user = input("EMail Adresiniz: ")
+#         password_user = input("Şifreniz: ")
+#         password_user_control = input("Şifreniz Tekrar: ")
+#
+#         if password_user == password_user_control:
+#             print("Hoş geldiniz !")
+#             print(f"Ad: {ad}, Soyad: {soyad}, Kullanıcı Adı: {username}, E-Mail: {email_user}, Şifre: {password_user}")
+#         else:
+#             print("Şifreler birbirini tutmuyor")
+#     elif cevap == "H":
+#         print("Peki !!!")
+#
+#     else:
+#         print("Yanlış seçim")
 
 
-print(f"{isim} Maaşınız: {maas}")
-# print("{} Maaşınız: {}".format(isim,maas))
+# Girilen 3 sayıyı büyüklük olarak karşılaştıran python uygulamasını yapınız.
+
+
+"""
+a b c
+
+a > b  ve  a > c  => a
+b> a  ve  b>c  => b
+c 
+"""
+a: int = int(input("1. sayı: "))
+b: int = int(input("2. sayı: "))
+c: int = int(input("3. sayı: "))
+
+if a > b and a > c:
+    print(f"En büyük sayı  {a}")
+elif b > a and b > c:
+    print(f"En büyük sayı  {b}")
+else:
+    print(f"En büyük sayı  {c}")

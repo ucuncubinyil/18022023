@@ -195,6 +195,7 @@ print(f"{sayi} ! = {sonuc}")
                 alarak kayıt yapalım.
                     şifre ve şifretekrarın aynı olması
 """
+"""
 
 kullanici_adi: str = "mehmetnuri"
 email: str = "info@mehmetnuri.net"
@@ -235,3 +236,22 @@ while True:
             : # Değer True ise
         print("Hoş geldiniz !")
         break
+"""
+
+# SORU: Kullanıcıdan alınan sayının asal olup olmadığını ekran yazdırınız.
+# Asal sayı 1 ve kendisinden başka hiç bir sayıya bölünmeyen sayıdır. 13
+
+i: int = 2
+s: int = int(input("Asallığı kontrol edilecek sayıyı giriniz: "))
+asal_mi: bool = True
+
+while i < s:
+
+    if s % i == 0:
+        asal_mi = False
+        break
+    i += 1
+if asal_mi:
+    print(f"Sayı asaldır: {s}")
+else:
+    print(f"Sayı asal değildir: {s}")

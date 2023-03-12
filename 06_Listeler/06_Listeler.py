@@ -204,29 +204,29 @@ sayi_listesi_2 = [sayi for sayi in range(10, 101, 2)]
 print(sayi_listesi_2)
 """
 
-liste = [44, 33, 55, 66] # adres kadıköy
-liste2 = liste #adres kadıköy
-
-print(liste)
-print(liste2)
-liste.append(77)
-
-print(liste)
-print(liste2)
-
-
-
-a =  [1,2,3] # ram adresi kadıköy
-b = a.copy() # ram adresi mecideköy
-
-print(a)
-print(b)
-
-b.append(4)
-
-
-print(a)
-print(b)
+# liste = [44, 33, 55, 66] # adres kadıköy
+# liste2 = liste #adres kadıköy
+#
+# print(liste)
+# print(liste2)
+# liste.append(77)
+#
+# print(liste)
+# print(liste2)
+#
+#
+#
+# a =  [1,2,3] # ram adresi kadıköy
+# b = a.copy() # ram adresi mecideköy
+#
+# print(a)
+# print(b)
+#
+# b.append(4)
+#
+#
+# print(a)
+# print(b)
 
 # SORU: Kullanicidan 10 adet sayı alıp listeye
 # atın ve sonrasında listenin aritmetik ortalamasını bulun.
@@ -238,3 +238,125 @@ print(b)
 
 # SORU: Klavyeden alınan 5 kelimeyi bir listeye atın.
 # : Girilen 6. kelimenin listede olup olmadığını ekrana yazdırınız.
+
+"""
+sayilar = [10, 40, 30, 40, 40, 20, 20]
+
+### Dizideki elemanın değerini değişmek
+
+sayilar[2] = 15
+print(sayilar)
+print(sayilar.index(40))  # dizide baştan itibaren 40 değerini ara
+print(sayilar.index(40, 3))  # dizide 3. elemandan sonra 40 değerini ara
+
+tekrar: int = 0
+for eleman in range(len(sayilar)):
+    if sayilar[eleman] == 40:
+        print(eleman)
+        tekrar += 1
+
+print(sayilar.count(40))
+print(tekrar)
+"""
+"""
+sayilar = [10, 40, 30, 40, 40, 20, 20]
+
+sayilar.append(99)
+print(sayilar)
+
+sayilar.insert(1, 44)  # indexi 1 olan elemanı sağa kaydır yerine 44 koy
+print(sayilar)
+
+sayilar.insert(2, 43)  # indexi 2 olan elemanı sağa kaydır yerine 43 koy
+print(sayilar)
+"""
+# SORU: Kullanicidan 10 adet sayı alıp listeye
+# atın ve sonrasında listenin aritmetik ortalamasını bulun.
+"""
+sayi_listesi: list = list()
+
+for i in range(1, 11):
+    sayi = int(input(f"{i}. sayı: "))
+    sayi_listesi.append(sayi)
+
+print(sum(sayi_listesi) / len(sayi_listesi))
+
+sayi_listesi_2: list = list()
+
+for i in range(1, 11):
+    sayi = int(input(f"{i}. sayı: "))
+    sayi_listesi_2.append(sayi)
+
+liste_toplami = 0
+for sayi in sayi_listesi_2:
+    liste_toplami += sayi
+
+print(liste_toplami / len(sayi_listesi_2))
+
+"""
+
+# 1. 1-100 arasında 20 adet rastgele sayı üretin ve
+# aynı numara içerde olmadan listeye atın.
+from random import randint
+
+"""
+
+sayilar: list = list()
+
+while len(sayilar) <= 20:
+    sayi: int = randint(1, 101)
+    if sayi not in sayilar:
+        sayilar.append(sayi)
+
+print(sayilar)
+
+"""
+"""
+sayilar: list = list()
+
+for i in range(1, 30):
+    if len(sayilar) <= 20:
+        sayi: int = randint(1, 101)
+        if sayi not in sayilar:
+            sayilar.append(sayi)
+        else:
+            continue
+    else:
+        break
+
+print(sayilar)
+tek_liste: list = list()
+cift_liste: list = list()
+
+for sayi in sayilar:
+    if sayi % 2 == 0:
+        cift_liste.append(sayi)
+    else:
+        tek_liste.append(sayi)
+
+print(f"Tek Liste: {tek_liste}")
+print(f"Çift Liste: {cift_liste}")
+"""
+# SORU: Klavyeden alınan 5 kelimeyi bir listeye atın.
+# : Girilen 6. kelimenin listede olup olmadığını ekrana yazdırınız.
+"""
+kelimeler: list = list()
+sayac: int = 1
+
+while sayac < 7:
+    kelime = input("Bir kelime girin")
+
+    if sayac < 6:
+        if kelime not in kelimeler:
+            kelimeler.append(kelime)
+            sayac += 1
+        else:
+            print(f"Girmiş olduğunuz {kelime} kelimeler listesinde mevcut")
+    else:
+        if kelime in kelimeler:
+            print(f"{kelime}  kelimesi kelimeler listesinde mevcut")
+            break
+        else:
+            print(f"{kelime}  kelimesi kelimeler listesinde mevcut değil")
+            break
+"""
